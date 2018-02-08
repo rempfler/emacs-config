@@ -72,7 +72,7 @@
 
 
 ;; required packages
-(setq package-list '(company-irony irony company irony-eldoc irony))
+(setq package-list '(company-irony irony company irony-eldoc irony elpy))
 
 ;; activate all packages
 (package-initialize)
@@ -84,6 +84,9 @@
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
+
+;; elpy
+(elpy-enable)
 
 ;; Clang-format
 (setq clangf-path
